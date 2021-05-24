@@ -1,5 +1,7 @@
+import 'package:besklet/app/sign_in/sign_in_page.dart';
 import 'package:flutter/material.dart';
-import 'screens/welcome/welcome_screen.dart';
+
+
 
 void main() {
   runApp(MyApp());
@@ -12,10 +14,11 @@ class MyApp extends StatelessWidget {
     debugShowCheckedModeBanner: false,
     title: 'Bisklet',
     theme: ThemeData(
-      scaffoldBackgroundColor: Colors.white,
+      primaryColor: Colors.grey[200],
 
     ),
-    home: WelcomeScreen()
+    home: signInPage(),
+
     );
-    }
+  }
 }

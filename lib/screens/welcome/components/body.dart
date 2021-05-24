@@ -1,4 +1,4 @@
-import 'package:besklet/screens/welcome/components/background.dart';
+import 'package:besklet/screens/welcome/components/background.dart' show Background;
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -9,7 +9,8 @@ class Body extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-        "Welcome to Besklet", 
+        "Welcome to Bisklet",
+        textAlign: TextAlign.center, 
         style: TextStyle(fontWeight: FontWeight.bold)
         ),
         ],
