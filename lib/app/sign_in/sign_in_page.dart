@@ -1,5 +1,3 @@
-import 'package:besklet/app/sign_in/sign_in_button.dart';
-import 'package:besklet/common_widget/custom_raised_button.dart';
 import 'package:flutter/material.dart';
 import 'package:besklet/app/sign_in/social_sign_in_button.dart';
 
@@ -10,14 +8,22 @@ class signInPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Welcome To Bisklet'),
+        backgroundColor: Color(0xFFAED6F1),
         elevation: 10.0,
       ),
-      body: _buildContent(),
-      backgroundColor: Colors.grey[200],
-      );
+      body: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/bike.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: _buildContent(),
+      )
+    );
   }
   Widget _buildContent() {
-        return Padding(
+        return Padding (
         padding: EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,10 +46,10 @@ class signInPage extends StatelessWidget {
                 fontSize: 15.0,
                 fontWeight: FontWeight.bold,
               ),),
-              color: Colors.green[200],
+              color: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(5.0),
+                  Radius.circular(50),
               ),
               ),
               onPressed: () {},
