@@ -1,4 +1,4 @@
-import 'package:besklet/screens/welcome/components/background.dart' show Background;
+import 'package:bisklet/screens/welcome/components/background.dart' show Background;
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:besklet/app/sign_in/social_sign_in_button.dart';
+import 'package:bisklet/app/sign_in/social_sign_in_button.dart';
 
 // ignore: camel_case_types
 class signInPage extends StatelessWidget {
@@ -19,11 +19,11 @@ class signInPage extends StatelessWidget {
               ),
             ),
             child: _buildContent(),
-      )
+      )   
     );
   }
   Widget _buildContent() {
-        return Padding (
+        return Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -46,10 +46,10 @@ class signInPage extends StatelessWidget {
                 fontSize: 15.0,
                 fontWeight: FontWeight.bold,
               ),),
-              color: Colors.white,
+              color: Colors.green[200],
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(50),
+                  Radius.circular(5.0),
               ),
               ),
               onPressed: () {},

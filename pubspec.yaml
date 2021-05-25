@@ -1,4 +1,4 @@
-name: besklet
+name: bisklet
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -56,7 +56,7 @@ flutter:
     - images/google-logo.png
     - images/facebook-logo.png
     - assets/images/bikes.jpg
-    - assets/images/bike-1.jpg
+    - assets/images/bike.jpg
   
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

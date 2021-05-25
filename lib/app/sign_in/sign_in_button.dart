@@ -1,4 +1,4 @@
-import 'package:besklet/common_widget/custom_raised_button.dart';
+import 'package:bisklet/common_widget/custom_raised_button.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 
