@@ -1,4 +1,4 @@
-#Tue May 25 19:44:56 CET 2021
+#Wed May 26 15:28:28 CET 2021
 base.0=/home/emna/application_flutter/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

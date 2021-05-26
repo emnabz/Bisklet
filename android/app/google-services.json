@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "338755907499",
+    "project_id": "applicationflutter",
+    "storage_bucket": "applicationflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338755907499:android:e7e0b191e0e3b6fbed2cee",
+        "android_client_info": {
+          "package_name": "com.example.bisklet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338755907499-sd2nlj2ig1f9kifidgsv45adlfnudkok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHuSgbzt46_wFBvjCGJHgilb5yyBE6wsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338755907499-sd2nlj2ig1f9kifidgsv45adlfnudkok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
