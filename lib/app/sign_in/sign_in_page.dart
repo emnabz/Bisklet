@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bisklet/app/sign_in/social_sign_in_button.dart';
+import 'package:bisklet/app/sign_in/login.dart';
 
 // ignore: camel_case_types
 class signInPage extends StatelessWidget {
@@ -18,11 +19,11 @@ class signInPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            child: _buildContent(),
+            child: _buildContent(context),
       )   
     );
   }
-  Widget _buildContent() {
+  Widget _buildContent(context) {
         return Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -32,7 +33,7 @@ class signInPage extends StatelessWidget {
             Text(
               'Already have an account?',
             style: TextStyle(fontSize: 20.0, 
-            color: Colors.white,
+            color: Colors.black,
             fontWeight: FontWeight.w600,),
             textAlign: TextAlign.center,
             ),
@@ -52,14 +53,18 @@ class signInPage extends StatelessWidget {
                   Radius.circular(50),
               ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => LoginScreen()));
+              },
             ),
             SizedBox(height: 8.0),
             Text(
               'New to Bisklet? Sign up.',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 20.0,
               fontWeight: FontWeight.w600,
             ),
