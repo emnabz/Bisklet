@@ -8,13 +8,13 @@ class signInPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Welcome To Bisklet'),
-        backgroundColor: Color(0xFFAED6F1),
+        backgroundColor: Color(0xFF006666),
         elevation: 10.0,
       ),
       body: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/bike.jpg"),
+                image: AssetImage("assets/images/bikes.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -32,7 +32,7 @@ class signInPage extends StatelessWidget {
             Text(
               'Already have an account?',
             style: TextStyle(fontSize: 20.0, 
-            color: Colors.black87,
+            color: Colors.white,
             fontWeight: FontWeight.w600,),
             textAlign: TextAlign.center,
             ),
@@ -46,19 +46,20 @@ class signInPage extends StatelessWidget {
                 fontSize: 15.0,
                 fontWeight: FontWeight.bold,
               ),),
-              color: Colors.green[200],
+              color: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(5.0),
+                  Radius.circular(50),
               ),
               ),
               onPressed: () {},
             ),
             SizedBox(height: 8.0),
             Text(
-              'New to Bisklet? sign up.',
+              'New to Bisklet? Sign up.',
             textAlign: TextAlign.center,
             style: TextStyle(
+              color: Colors.white,
               fontSize: 20.0,
               fontWeight: FontWeight.w600,
             ),
