@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+lottie: ^1.0.1
 
 
 
@@ -50,8 +51,12 @@ flutter:
     - images/google-logo.png
     - images/facebook-logo.png
     - assets/images/bikes.jpg
-    # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware.
+    - assets/images/helmet.json
+    - images/bisklet.jpg
+    - assets/images/bisklet2.png
+
+# An image asset can refer to one or more resolution-specific "variants", see
+# https://flutter.dev/assets-and-images/#resolution-aware.
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
