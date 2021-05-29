@@ -1,7 +1,7 @@
-import 'package:bisklet/app/sign_in/profile_pages/settings.dart';
 import 'package:flutter/material.dart';
-// ignore: unused_import
-import 'package:bisklet/app/sign_in/profile_pages/edit_profile.dart';
+import 'package:bisklet/app/sign_in/login_screen.dart';
+
+
 
 class SettingsUI extends StatelessWidget {
   @override
@@ -20,7 +20,7 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
-  bool showPassword = false;
+  bool showPassword = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,26 +34,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
           ),
           onPressed: () {},
         ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.settings,
-              color: Colors.green,
-            ),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => SettingsPage()));
-            },
-          ),
-        ],
       ),
       body: Container(
         padding: EdgeInsets.only(left: 16, top: 25, right: 16),
         child: GestureDetector(
-          onTap: () {
-            // ignore: unnecessary_statements
-            FocusScope.of(context).unfocus(); SettingsPage;
-          },
           child: ListView(
             children: [
               Text(
@@ -114,7 +98,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               ),
               buildTextField("Full Name", "", false),
               buildTextField("E-mail", "", false),
-              buildTextField("Password", "********", true),
+              buildTextField("Password", "", true),
               buildTextField("Location", "", false),
               SizedBox(
                 height: 35,
@@ -149,7 +133,23 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     ),
                   )
                 ],
-              )
+              ),
+              SizedBox(
+              height: 35,
+            ),
+            Center(
+              child: OutlineButton(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                onPressed: () {Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => LoginScreen()));},
+                child: Text("SIGN OUT",
+                    style: TextStyle(
+                        fontSize: 16, letterSpacing: 2.2, color: Colors.black)),
+              ),
+            )
             ],
           ),
         ),
@@ -162,7 +162,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35.0),
       child: TextField(
-        obscureText: isPasswordTextField ? showPassword : false,
+        obscureText: isPasswordTextField ? showPassword : true,
         decoration: InputDecoration(
             suffixIcon: isPasswordTextField
                 ? IconButton(
