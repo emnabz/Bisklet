@@ -54,6 +54,7 @@ flutter:
     - assets/images/helmet.json
     - images/bisklet.jpg
     - assets/images/bisklet2.png
+    - assets/images/back.png
 
 # An image asset can refer to one or more resolution-specific "variants", see
 # https://flutter.dev/assets-and-images/#resolution-aware.
