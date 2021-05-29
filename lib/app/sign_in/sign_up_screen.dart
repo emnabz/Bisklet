@@ -33,15 +33,15 @@ class InitState extends State<SignUpScreen> {
                             margin: EdgeInsets.only(top: 50),
                             child: Image.asset(
                               "assets/images/back.png",
-                              height: 90,
-                              width: 90,
+                              height: 140,
+                              width: 320,
                             ),
                           ),
                           Container(
                             margin: EdgeInsets.only(right: 20, top: 20),
                             alignment: Alignment.bottomRight,
                             child: Text(
-                              "Register",
+                              "Sign Up",
                               style: TextStyle(
                                   fontSize: 20,
                                   color: Colors.white
@@ -160,6 +160,7 @@ class InitState extends State<SignUpScreen> {
                     ],
                   ),
                   child: TextField(
+                    obscureText: true,
                     cursorColor: Color(0xFF66BB6A),
                     decoration: InputDecoration(
                       focusColor: Color(0xFF66BB6A),
