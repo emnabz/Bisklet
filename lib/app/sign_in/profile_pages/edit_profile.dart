@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bisklet/app/sign_in/login_screen.dart';
 
-
-
 class SettingsUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

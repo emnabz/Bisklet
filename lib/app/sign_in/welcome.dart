@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bisklet/app/sign_in/social_sign_in_button.dart';
-import 'package:bisklet/app/sign_in/login.dart';
+import 'package:bisklet/app/sign_in/login_screen.dart';
 
 // ignore: camel_case_types
 class signInPage extends StatelessWidget {

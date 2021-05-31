@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bisklet/app/sign_in/sign_up_screen.dart';
-import 'package:bisklet/app/sign_in/modify.dart';
+import 'package:bisklet/app/sign_in/reset_password.dart';
 class LoginScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => StartState();
