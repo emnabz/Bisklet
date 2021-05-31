@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bisklet/app/sign_in/sign_up_screen.dart';
-import 'package:bisklet/app/sign_in/profile_pages/edit_profile.dart';
-
+import 'package:bisklet/app/sign_in/modify.dart';
 class LoginScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => StartState();
@@ -124,6 +123,9 @@ class StartState extends State<LoginScreen> {
               alignment: Alignment.centerRight,
               child: GestureDetector(
                 onTap: () {
+                  Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => Forgot()));
                 },
                       
                 child: Text("Forget Password?"),
@@ -131,9 +133,6 @@ class StartState extends State<LoginScreen> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => SettingsUI()));
               },
               child: Container(
                 alignment: Alignment.center,
