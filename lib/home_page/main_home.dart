@@ -1,72 +1,250 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import '../app/sign_in/profile_pages/edit_profile.dart';
-
-class HomePage extends StatefulWidget {
+import 'package:bisklet/home_page/calendar.dart';
+class MainPage extends StatelessWidget {
   @override
-  _MainPageState createState() => _MainPageState();
-}
-// ignore: must_be_immutable
-class _MainPageState extends State<HomePage> {
-  @override
-  // ignore: unused_field
-  // ignore: override_on_non_overriding_member
-  int _selectedIndex = 0;
-  // ignore: unused_field
-  List<Widget> _widgetOptions = <Widget>[
-    HomePage(),        
-    Text('Maps'), //maps page no ready yet
-    SettingsUI(),
-];
-
-  // ignore: unused_element
-  void _onItemTap(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'ubuntu',
+      ),
+      debugShowCheckedModeBanner: false,
+      home: mainPage(),
+      routes: {
+        '/CalendarPage' : (context) => CalendarPage(),
+      },
+    );
   }
+}
+class mainPage extends StatefulWidget {
+  @override
+  _mainPageState createState() => _mainPageState();
+}
 
-
-
+class _mainPageState extends State<mainPage> {
+  String selectedType = "solo";
+  String selectedFrequency = "guided tour";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Home'),
-        backgroundColor: Color(0xFF66BB6A),
-          elevation: 1,
+      backgroundColor: Colors.green[600],
+      appBar: AppBar(
+        title: Text("Home", style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w700
+        ),),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon:Icon(
-              Icons.home_filled
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+                color: Colors.white
               ),
-            // ignore: deprecated_member_use
-            title: Text(
-              'Home',
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 20,),
+                  Text("Choose your trip", style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),),
+                  SizedBox(height: 20,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InkWell(
+                        onTap: (){changetrip("solo");},
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 140,
+                              width: MediaQuery.of(context).size.width*0.43,
+                              decoration: BoxDecoration(
+                                color: Color(0xffdfdeff),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/solo.jpg'),
+                                ),
+                                borderRadius: BorderRadius.all(Radius.circular(20)),
+                              ),
+                            ),
+                            SizedBox(height: 10,),
+                            Text("In Solo", style: TextStyle(
+                              fontWeight: FontWeight.w600
+                            ),),
+                            SizedBox(height: 10,),
+                            Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xffededed),
+                              ),
+                              child: (selectedType == "solo") ? Icon(Icons.check_circle,
+                              color: Colors.yellow[200],
+                              size: 30,):Container(),
+                            )
+                          ],
+                        ),
+                      ),
+                      InkWell(
+                        onTap: (){changetrip("guided tour");},
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 140,
+                              width: MediaQuery.of(context).size.width*0.43,
+                              decoration: BoxDecoration(
+                                color: Color(0xffdfdeff),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/guided_tour.jpg'),
+                                ),
+                                borderRadius: BorderRadius.all(Radius.circular(20)),
+                              ),
+                            ),
+                            SizedBox(height: 10,),
+                            Text("Guided Tour", style: TextStyle(
+                                fontWeight: FontWeight.w600
+                            ),),
+                            SizedBox(height: 10,),
+                            Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xffededed),
+                              ),
+                              child: (selectedType == "guided tour") ? Icon(Icons.check_circle,
+                                color: Colors.yellow[200],
+                                size: 30,):Container(),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 30,),
+                  Text("Choose your bike", style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),),
+                  SizedBox(height: 20,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InkWell(
+                        onTap: (){changetype("beginner");},
+                        child: Container(
+                          height: 50,
+                          width: 110,
+                          decoration: (selectedFrequency == "beginner") ? BoxDecoration(
+                            color: Colors.yellow[200],
+                            borderRadius: BorderRadius.all(Radius.circular(10))
+                          ) : BoxDecoration(
+                            border: Border.all(color: Colors.black.withOpacity(0.3)),
+                            borderRadius: BorderRadius.all(Radius.circular(10))
+                          ),
+                          child: Center(
+                            child: Text("Beginner", style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: (){changetype("Medium");},
+                        child: Container(
+                          height: 50,
+                          width: 110,
+                          decoration: (selectedFrequency == "Medium") ? BoxDecoration(
+                              color: Colors.yellow[200],
+                              borderRadius: BorderRadius.all(Radius.circular(10))
+                          ) : BoxDecoration(
+                              border: Border.all(color: Colors.black.withOpacity(0.3)),
+                              borderRadius: BorderRadius.all(Radius.circular(10))
+                          ),
+                          child: Center(
+                            child: Text("Medium", style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                            ),),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: (){changetype("Professional");},
+                        child: Container(
+                          height: 50,
+                          width: 110,
+                          decoration: (selectedFrequency == "Professional") ? BoxDecoration(
+                              color: Colors.yellow[200],
+                              borderRadius: BorderRadius.all(Radius.circular(10))
+                          ) : BoxDecoration(
+                              border: Border.all(color: Colors.black.withOpacity(0.3)),
+                              borderRadius: BorderRadius.all(Radius.circular(10))
+                          ),
+                          child: Center(
+                            child: Text("Professional", style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                            ),),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: openCalendarPage,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.green[600],
+                          ),
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 50),
+                          child: Text("Next", style: TextStyle(
+                            fontSize: 19,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600
+                          ),),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
               ),
-          ),
-          BottomNavigationBarItem(
-            icon:Icon(
-              Icons.map_outlined),
-            // ignore: deprecated_member_use
-            title: Text('Maps'),
-          ),
-          BottomNavigationBarItem(
-            icon:Icon(
-              Icons.account_circle),
-            // ignore: deprecated_member_use
-            title: Text('Profile'),
-          ),
+            ),
+          )
         ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTap,
-        selectedFontSize: 13.0,
-        unselectedFontSize: 13.0,
-        ),
+      ),
     );
+  }
+  void changetrip(String type)
+  {
+    selectedType = type;
+    setState(() {
+
+    });
+  }
+  void changetype(String frequency)
+  {
+    selectedFrequency = frequency;
+    setState(() {
+
+    });
+  }
+ 
+  void openCalendarPage()
+  {
+    Navigator.pushNamed(context, '/CalendarPage');
   }
 }
