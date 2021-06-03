@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  table_calendar: ^2.0.0
 lottie: ^1.0.1
 
 
@@ -52,6 +53,10 @@ flutter:
     - assets/images/helmet.json
     - assets/images/bisklet2.png
     - assets/images/back.png
+    - assets/images/reset.png
+    - assets/images/solo.jpg
+    - assets/images/guided_tour.jpg
+    - assets/images/profil.png
 
 # An image asset can refer to one or more resolution-specific "variants", see
 # https://flutter.dev/assets-and-images/#resolution-aware.
