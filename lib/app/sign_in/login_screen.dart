@@ -137,7 +137,7 @@ class StartState extends State<LoginScreen> {
               onTap: () { 
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => HomePage()));
+                  MaterialPageRoute(builder: (context) => MainPage()));
               },
               child: Container(
                 alignment: Alignment.center,
@@ -183,13 +183,13 @@ class StartState extends State<LoginScreen> {
                     ),
                     onTap: () {
                       // Write Tap Code Here.
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignUpScreen(),
-                        )
-                      );
-                    },
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignUpScreen(),
+                          )
+                        );
+                      },
                   )
                 ],
               ),

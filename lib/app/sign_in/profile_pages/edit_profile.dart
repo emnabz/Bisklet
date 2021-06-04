@@ -1,3 +1,4 @@
+import 'package:bisklet/home_page/main_home.dart';
 import 'package:flutter/material.dart';
 import 'package:bisklet/app/sign_in/login_screen.dart';
 
@@ -30,7 +31,14 @@ class _EditProfilePageState extends State<EditProfilePage> {
             Icons.arrow_back,
             color: Colors.green,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>  MainPage()
+                  )
+            );
+          }
         ),
       ),
       body: Container(
@@ -66,7 +74,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                "assets/images/annonymous.png",
+                                "assets/images/profil.png",
                               ))),
                     ),
                     Positioned(
@@ -108,13 +116,17 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => MainPage()));},
                     child: Text("CANCEL",
                         style: TextStyle(
                             fontSize: 14,
                             letterSpacing: 2.2,
                             color: Colors.black)),
+                            
                   ),
+                  
                   RaisedButton(
                     onPressed: () {},
                     color: Colors.green,
