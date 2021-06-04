@@ -33,27 +33,32 @@ class _mainPageState extends State<mainPage> {
           children: <Widget> [
             DrawerHeader(
               decoration: BoxDecoration(
-                color: Color(0xFF66BB6A),
+                color: Colors.white30,
             ),
             child: Column(
-              children: <Widget>[
-                CircleAvatar(
-                  radius: 30.0,
-                  backgroundImage: NetworkImage("assets/images/back.png"),
-                  backgroundColor: Colors.transparent,
-                  ),
-                Container(
-                  margin: EdgeInsets.only(top: 1
-                  ),
-                  child: Text(
-                    "Side Menu",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24
-                    ),
-                  ),
-                )
+          children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 10),
+                        child: Image.asset(
+                          "assets/images/menu.png",
+                          height: 120,
+                          width: 200,
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
             ],),
+            ),
+             new ListTile(
+              leading: Icon(Icons.home_rounded),
+              title: new Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage()
+                  )
+                );
+              },
             ),
             SizedBox(height: 10),
             new ListTile(
@@ -155,9 +160,7 @@ class _mainPageState extends State<mainPage> {
                                 image: DecorationImage(
                                   image: AssetImage('assets/images/solo.jpg'),
                                 ),
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(8.0)),
-                                  topRight: Radius.circular(8.0),
+                                borderRadius: BorderRadius.all(Radius.circular(20))
                               ),
                             ),
                             SizedBox(height: 10,),

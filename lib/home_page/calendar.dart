@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:bisklet/app/sign_in/login_screen.dart';
+import 'package:bisklet/app/sign_in/profile_pages/edit_profile.dart';
 import 'package:table_calendar/table_calendar.dart';
-class CalendarPage extends StatelessWidget {
+import 'package:bisklet/home_page/main_home.dart';class CalendarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,6 +36,95 @@ class _calendarPageState extends State<calendarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: new Drawer(
+        child: new ListView(
+          children: <Widget> [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.white30,
+            ),
+            child: Column(
+          children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 10),
+                        child: Image.asset(
+                          "assets/images/menu.png",
+                          height: 120,
+                          width: 200,
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
+            ],),
+            ),
+             new ListTile(
+              leading: Icon(Icons.home_rounded),
+              title: new Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage()
+                  )
+                );
+              },
+            ),
+            SizedBox(height: 10),
+            new ListTile(
+              leading: Icon(Icons.account_circle),
+              title: new Text('Profile'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SettingsUI()
+                  )
+                );
+              },  
+            ),
+            new ListTile(
+              leading: Icon(Icons.map_rounded),
+              title: new Text('Maps'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage()
+                  )
+                );
+              },
+            ),
+            new ListTile(
+              leading: Icon(Icons.notifications_on_outlined),
+              title: new Text('Notifications'),
+              onTap: () {},
+            ),
+            new ListTile(
+              leading: Icon(Icons.info_outlined),
+              title: new Text('About'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SettingsUI()
+                  )
+                );
+              },  
+            ),
+            new ListTile(
+              leading: Icon(Icons.login_rounded),
+              title: new Text('Log Out'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginScreen()
+                  )
+                );
+              },  
+            ),
+          ],
+        )
+      ),
       backgroundColor: Colors.green[600],
       appBar: AppBar(
         elevation: 0,
