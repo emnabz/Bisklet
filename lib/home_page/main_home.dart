@@ -1,7 +1,8 @@
 import 'package:bisklet/app/sign_in/login_screen.dart';
 import 'package:bisklet/app/sign_in/profile_pages/edit_profile.dart';
-import 'package:flutter/material.dart';
 import 'package:bisklet/home_page/calendar.dart';
+import 'package:flutter/material.dart';
+
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,9 +12,6 @@ class MainPage extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: mainPage(),
-      routes: {
-        '/CalendarPage' : (context) => CalendarPage(),
-      },
     );
   }
 }
@@ -294,8 +292,14 @@ class _mainPageState extends State<mainPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
-                        onTap: openCalendarPage,
-                        child: Container(
+                        onTap: () {
+                          Navigator.push(context, 
+                          MaterialPageRoute(
+                            builder: (context) => DateTimePickerWidget() 
+                            ),
+                          );
+                        },
+                          child: Container(
                           padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -333,9 +337,5 @@ class _mainPageState extends State<mainPage> {
 
     });
   }
- 
-  void openCalendarPage()
-  {
-    Navigator.pushNamed(context, '/CalendarPage');
-  }
 }
+

@@ -1,42 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:bisklet/app/sign_in/login_screen.dart';
 import 'package:bisklet/app/sign_in/profile_pages/edit_profile.dart';
-import 'package:table_calendar/table_calendar.dart';
-import 'package:bisklet/home_page/main_home.dart';class CalendarPage extends StatelessWidget {
+import 'package:bisklet/home_page/main_home.dart';
+
+class DateTimePickerWidget extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: calendarPage(),
-      theme: ThemeData(
-        fontFamily: 'ubuntu'
-      ),
-    );
-  }
-}
-class calendarPage extends StatefulWidget {
-  @override
-  _calendarPageState createState() => _calendarPageState();
+  _DateTimePickerWidgetState createState() => _DateTimePickerWidgetState();
 }
 
-class _calendarPageState extends State<calendarPage> {
-  CalendarController _calendarController;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _calendarController = CalendarController();
-  }
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    _calendarController.dispose();
-    super.dispose();
-  }
+class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
+  DateTime selectedDate = DateTime.now();
+
+  final DateFormat dateFormat = DateFormat('yyyy-MM-dd HH:mm');
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: new Drawer(
+    return Scaffold(drawer: new Drawer(
         child: new ListView(
           children: <Widget> [
             DrawerHeader(
@@ -125,95 +105,80 @@ class _calendarPageState extends State<calendarPage> {
           ],
         )
       ),
-      backgroundColor: Colors.green[600],
+            backgroundColor: Color(0xFF66BB6A),
       appBar: AppBar(
+        title: Text("Home", style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w700
+        ),),
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Text("Select Date", style: TextStyle(
-          color: Colors.white
-        ),),
       ),
-      body: Column(
-        children: [
-          TableCalendar(
-            calendarController: _calendarController,
-            initialCalendarFormat: CalendarFormat.week,
-            startingDayOfWeek: StartingDayOfWeek.monday,
-            formatAnimation: FormatAnimation.slide,
-            headerStyle: HeaderStyle(
-              centerHeaderTitle: true,
-              formatButtonVisible: false,
-              titleTextStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 16
-              ),
-              leftChevronIcon: Icon(Icons.arrow_back_ios, color: Colors.white, size: 15,),
-              rightChevronIcon: Icon(Icons.arrow_forward_ios, color: Colors.white, size: 15,),
-              leftChevronMargin: EdgeInsets.only(left: 70),
-              rightChevronMargin: EdgeInsets.only(right: 70),
-            ),
-            calendarStyle: CalendarStyle(
-              weekendStyle: TextStyle(
-                color: Colors.white
-              ),
-              weekdayStyle: TextStyle(
-                color: Colors.white
-              )
-            ),
-            daysOfWeekStyle: DaysOfWeekStyle(
-              weekendStyle: TextStyle(
-                color: Colors.white
-              ),
-              weekdayStyle: TextStyle(
-                color: Colors.white
-              )
-            ),
-          ),
-          SizedBox(height: 5,),
-          Expanded(
+    body: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
             child: Container(
+              width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
                 color: Colors.white
               ),
-              child: Container(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Text("Edit Reservation", style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15,
-                          ),)
-                        ],
-                      ),
-                      SizedBox(height: 15,),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-  Row dayTask(String time, String name)
-  {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: EdgeInsets.all(20),
-          width: MediaQuery.of(context).size.width*0.2,
-          child: Text(time, style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w700,
-          ), textAlign: TextAlign.right,),
+            child:Column(
+
+
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text(dateFormat.format(selectedDate)),
+        RaisedButton(
+          child: Text('Choose new date time'),
+          onPressed: () async {
+            final selectedDate = await _selectDateTime(context);
+            if (selectedDate == null) return;
+
+            print(selectedDate);
+
+            final selectedTime = await _selectTime(context);
+            if (selectedTime == null) return;
+            print(selectedTime);
+
+            setState(() {
+              this.selectedDate = DateTime(
+                selectedDate.year,
+                selectedDate.month,
+                selectedDate.day,
+                selectedTime.hour,
+                selectedTime.minute,
+              );
+            });
+          },
         ),
-      ],
+      ]
+)
+            ),
+        ),
+      ]
+    )
+            );
+            
+
+        
+  }
+
+  Future<TimeOfDay> _selectTime(BuildContext context) {
+    final now = DateTime.now();
+
+    return showTimePicker(
+      context: context,
+      initialTime: TimeOfDay(hour: now.hour, minute: now.minute),
     );
   }
+
+  Future<DateTime> _selectDateTime(BuildContext context) => showDatePicker(
+        context: context,
+        initialDate: DateTime.now().add(Duration(seconds: 1)),
+        firstDate: DateTime.now(),
+        lastDate: DateTime(2100),
+      );
 }
