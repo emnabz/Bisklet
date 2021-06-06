@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/emna/application_flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ky/values-ky.xml",
+            "outputFile": "C:\\Users\\eyana\\emna\\application_flutter\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ky\\values-ky.xml",
             "map": [
                 {
-                    "source": "/home/emna/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/res/values-ky/values-ky.xml",
+                    "source": "C:\\Users\\eyana\\.gradle\\caches\\transforms-2\\files-2.1\\2e94107f30f39be366a17347c2bf100b\\core-1.1.0\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

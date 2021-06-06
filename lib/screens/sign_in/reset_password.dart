@@ -8,25 +8,19 @@ class Forgot extends StatefulWidget {
 class _LoginScreenState extends State<Forgot> {  
 Widget buildEmail() {
   return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.center,
     children: <Widget>[
       Container(
                         margin: EdgeInsets.only(top: 0),
                         child: Image.asset(
                           "assets/images/reset.png",
-                          height: 150,
-                          width: 320,
-                          fit: BoxFit.fitWidth,
+                          height: 300,
+                          width: 300,
+                          fit: BoxFit.fitHeight,
                         ),
                       ),
-      Text('Reset Password',
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 16,
-        fontWeight: FontWeight.bold
-      ),
-      ),
-      SizedBox(height: 10),
+                      SizedBox(height: 50,),
+      
       Container(
         alignment: Alignment.centerLeft,
         decoration: BoxDecoration(
@@ -126,7 +120,7 @@ Widget build(BuildContext context) {
                       fontWeight: FontWeight.bold
                     ), 
                   ),
-                  SizedBox(height: 120),
+                  SizedBox(height: 30),
                   buildEmail(),
                   SizedBox(height: 20),
                   buildLoginBtn(),

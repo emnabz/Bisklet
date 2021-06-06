@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bisklet/app/sign_in/splash.dart';
+import 'package:bisklet/screens/sign_in/splash.dart';
 
 void main() {
   runApp(MyApp());
