@@ -1,6 +1,6 @@
-import 'package:bisklet/home_page/main_home.dart';
+import 'package:bisklet/screens/home_page/main_home.dart';
 import 'package:flutter/material.dart';
-import 'package:bisklet/app/sign_in/login_screen.dart';
+import 'package:bisklet/screens/sign_in/login_screen.dart';
 
 class SettingsUI extends StatelessWidget {
   @override

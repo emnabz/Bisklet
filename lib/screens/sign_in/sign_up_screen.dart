@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bisklet/app/sign_in/onboard.dart';
+import 'package:bisklet/screens/sign_in/onboard.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override

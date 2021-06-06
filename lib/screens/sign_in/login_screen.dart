@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:bisklet/app/sign_in/sign_up_screen.dart';
-import 'package:bisklet/app/sign_in/reset_password.dart';
-import 'package:bisklet/home_page/main_home.dart';
+import 'package:bisklet/screens/sign_in/sign_up_screen.dart';
+import 'package:bisklet/screens/sign_in/reset_password.dart';
+import 'package:bisklet/screens/home_page/main_home.dart';
+enum AuthMode {Signup, Login}
 
 class LoginScreen extends StatefulWidget {
   @override

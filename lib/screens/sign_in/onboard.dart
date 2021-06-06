@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bisklet/home_page/main_home.dart';
+import 'package:bisklet/screens/home_page/main_home.dart';
 class Onboarding extends StatelessWidget {
   // This widget is the root of your application.
   @override

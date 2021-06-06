@@ -1,6 +1,6 @@
-import 'package:bisklet/app/sign_in/login_screen.dart';
-import 'package:bisklet/app/sign_in/profile_pages/edit_profile.dart';
-import 'package:bisklet/home_page/calendar.dart';
+import 'package:bisklet/screens/sign_in/login_screen.dart';
+import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
+import 'package:bisklet/screens/home_page/calendar.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
