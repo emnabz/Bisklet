@@ -2,6 +2,7 @@ import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
 import 'package:bisklet/screens/home_page/calendar.dart';
 import 'package:flutter/material.dart';
+import 'package:bisklet/screens/home_page/Reservation.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -288,6 +289,12 @@ class _mainPageState extends State<mainPage> {
                     ],
                   ),
                   
+                  Container(
+                    height: 200,
+                    child: DateTimePickerWidget(),
+                    ),
+                    SizedBox(height: 10,),
+                    
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -295,7 +302,7 @@ class _mainPageState extends State<mainPage> {
                         onTap: () {
                           Navigator.push(context, 
                           MaterialPageRoute(
-                            builder: (context) => DateTimePickerWidget() 
+                            builder: (context) => ReservationPage() 
                             ),
                           );
                         },
@@ -305,8 +312,8 @@ class _mainPageState extends State<mainPage> {
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             color: Color(0xFF66BB6A)
                           ),
-                          margin: EdgeInsets.only(left: 20, right: 20, top: 50),
-                          child: Text("Next", style: TextStyle(
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 10),
+                          child: Text("Apply", style: TextStyle(
                             fontSize: 19,
                             color: Colors.white,
                             fontWeight: FontWeight.w600
