@@ -126,6 +126,7 @@ class _mainPageState extends State<mainPage> {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
+      
       body: Column(
         children: [
           Expanded(
@@ -289,21 +290,27 @@ class _mainPageState extends State<mainPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 30,),
-                  InkWell(
-onTap: (){changetype("Choose new date time");},
+                  SizedBox(height: 20),
+                  Text("Choose Your Time", style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),),
+                  SizedBox(height: 15,),
+
+InkWell(
+onTap: (){changetype("Calendar");},
 child: Container(   
   height: 50,
    width: 200,
-   decoration: (selectedFrequency == "Choose new date time") ? BoxDecoration(
+   decoration: (selectedFrequency == "Calendar") ? BoxDecoration(
                               color: Colors.greenAccent,
                               borderRadius: BorderRadius.all(Radius.circular(10))
                           ) :
                     BoxDecoration(
-                      color: Colors.greenAccent,
                       border: Border.all(color: Colors.black.withOpacity(0.3)),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
+                    margin: EdgeInsets.only(left: 88, right: 50, top: 10),
                     child: Center(
                     child: DateTimePickerWidget2(),
                     ),
