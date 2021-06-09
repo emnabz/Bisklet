@@ -1,6 +1,6 @@
+import 'package:bisklet/screens/home_page/about.dart';
 import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
-import 'package:bisklet/screens/home_page/calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/home_page/main_home.dart';
 
@@ -96,7 +96,7 @@ class _mainPageState extends State<mainPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SettingsUI()
+                    builder: (context) => AboutUs()
                   )
                 );
               },  
@@ -118,7 +118,7 @@ class _mainPageState extends State<mainPage> {
       ),
       backgroundColor: Color(0xFF66BB6A),
       appBar: AppBar(
-        title: Text("Reservation", style: TextStyle(
+        title: Text("About Bisklet", style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w700
         ),),

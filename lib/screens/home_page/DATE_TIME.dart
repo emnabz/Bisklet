@@ -7,23 +7,22 @@ class DateTimePickerWidget2 extends StatefulWidget {
   _DateTimePickerWidget2State createState() => _DateTimePickerWidget2State();
 }
 
+
 class _DateTimePickerWidget2State extends State<DateTimePickerWidget2> {
   DateTime selectedDate = DateTime.now();
 
-  final DateFormat dateFormat = DateFormat('yyyy-MM-dd HH:mm');
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      
+
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(dateFormat.format(selectedDate)),
         
-        // center the calender and let it be like the other Widgets, should we change it from itspage or from the
         // ignore: deprecated_member_use
         RaisedButton(
           child: Center(
+            
             child: Text('Calendar', style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
@@ -34,8 +33,12 @@ class _DateTimePickerWidget2State extends State<DateTimePickerWidget2> {
               setState(() {
                 this.selectedDate = selectedDate;
               });
+
             });
           },
+          shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black.withOpacity(0.3)), borderRadius: BorderRadius.circular(10)),
+          color: Colors.white,
+
         ),
       ]
     );

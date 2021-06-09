@@ -1,7 +1,7 @@
 import 'package:bisklet/screens/home_page/DATE_TIME.dart';
+import 'package:bisklet/screens/home_page/about.dart';
 import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
-import 'package:bisklet/screens/home_page/calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/home_page/Reservation.dart';
 
@@ -97,7 +97,7 @@ class _mainPageState extends State<mainPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SettingsUI()
+                    builder: (context) => AboutUs()
                   )
                 );
               },  
@@ -160,12 +160,13 @@ class _mainPageState extends State<mainPage> {
                                 color: Color(0xffdfdeff),
                                 image: DecorationImage(
                                   image: AssetImage('assets/images/solo.jpg'),
+                                  fit: BoxFit.cover
                                 ),
                                 borderRadius: BorderRadius.all(Radius.circular(20))
                               ),
                             ),
                             SizedBox(height: 10,),
-                            Text("In Solo", style: TextStyle(
+                            Text("Solo", style: TextStyle(
                               fontWeight: FontWeight.w600
                             ),),
                             SizedBox(height: 10,),
@@ -177,7 +178,7 @@ class _mainPageState extends State<mainPage> {
                                 color: Color(0xffededed),
                               ),
                               child: (selectedType == "solo") ? Icon(Icons.check_circle,
-                              color: Colors.greenAccent,
+                              color: Colors.greenAccent[400],
                               size: 30,):Container(),
                             )
                           ],
@@ -194,7 +195,9 @@ class _mainPageState extends State<mainPage> {
                                 color: Color(0xffdfdeff),
                                 image: DecorationImage(
                                   image: AssetImage('assets/images/guided_tour.jpg'),
+                                  fit: BoxFit.cover
                                 ),
+
                                 borderRadius: BorderRadius.all(Radius.circular(20)),
                               ),
                             ),
@@ -211,7 +214,7 @@ class _mainPageState extends State<mainPage> {
                                 color: Color(0xffededed),
                               ),
                               child: (selectedType == "guided tour") ? Icon(Icons.check_circle,
-                                color: Colors.greenAccent,
+                                color: Colors.greenAccent[400],
                                 size: 30,):Container(),
                             )
                           ],
@@ -234,7 +237,7 @@ class _mainPageState extends State<mainPage> {
                           height: 50,
                           width: 110,
                           decoration: (selectedFrequency == "beginner") ? BoxDecoration(
-                            color: Colors.greenAccent,
+                            color: Colors.greenAccent[400],
                             borderRadius: BorderRadius.all(Radius.circular(10))
                           ) : BoxDecoration(
                             border: Border.all(color: Colors.black.withOpacity(0.3)),
@@ -254,7 +257,7 @@ class _mainPageState extends State<mainPage> {
                           height: 50,
                           width: 110,
                           decoration: (selectedFrequency == "Medium") ? BoxDecoration(
-                              color: Colors.greenAccent,
+                              color: Colors.greenAccent[400],
                               borderRadius: BorderRadius.all(Radius.circular(10))
                           ) : BoxDecoration(
                               border: Border.all(color: Colors.black.withOpacity(0.3)),
@@ -274,7 +277,7 @@ class _mainPageState extends State<mainPage> {
                           height: 50,
                           width: 110,
                           decoration: (selectedFrequency == "Professional") ? BoxDecoration(
-                              color: Colors.greenAccent,
+                              color: Colors.greenAccent[400],
                               borderRadius: BorderRadius.all(Radius.circular(10))
                           ) : BoxDecoration(
                               border: Border.all(color: Colors.black.withOpacity(0.3)),
@@ -300,23 +303,16 @@ class _mainPageState extends State<mainPage> {
 InkWell(
 onTap: (){changetype("Calendar");},
 child: Container(   
-  height: 50,
-   width: 200,
-   decoration: (selectedFrequency == "Calendar") ? BoxDecoration(
-                              color: Colors.greenAccent,
-                              borderRadius: BorderRadius.all(Radius.circular(10))
-                          ) :
-                    BoxDecoration(
-                      border: Border.all(color: Colors.black.withOpacity(0.3)),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    margin: EdgeInsets.only(left: 88, right: 50, top: 10),
+  
+  height: 100,
+   width: 250,
+                 margin: EdgeInsets.only(left: 50, right: 20, top: 12),
                     child: Center(
                     child: DateTimePickerWidget2(),
                     ),
  ),
                   ),
-                    SizedBox(height: 70,),
+                    SizedBox(height: 40,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -334,7 +330,7 @@ child: Container(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             color: Color(0xFF66BB6A)
                           ),
-                          margin: EdgeInsets.only(left: 20, right: 20, top: 10),
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 12),
                           child: Text("Apply", style: TextStyle(
                             fontSize: 19,
                             color: Colors.white,

@@ -92,6 +92,8 @@ class _DateTimeDialogState extends State<DateTimeDialog> {
 
                     widget.onSelectedDate(selectedDate);
                   },
+                  
+                  color: Color(0xFF66BB6A),
                 ),
                 const SizedBox(width: 8),
                 RaisedButton(
@@ -122,7 +124,7 @@ class _DateTimeDialogState extends State<DateTimeDialog> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              highlightColor: Colors.greenAccent,
+              highlightColor: Colors.greenAccent[400],
             ),
           ],
         ),
