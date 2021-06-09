@@ -17,10 +17,9 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            body:Column(
+      backgroundColor: Colors.white,
+            body: Column(
 
-
-      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(dateFormat.format(selectedDate)),
         RaisedButton(
@@ -45,7 +44,9 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
               );
             });
           },
-        ),
+    shape: StadiumBorder(),
+    
+            ),
       ]
 ));
            

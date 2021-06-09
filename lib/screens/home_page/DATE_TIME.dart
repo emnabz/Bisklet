@@ -15,11 +15,22 @@ class _DateTimePickerWidget2State extends State<DateTimePickerWidget2> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(dateFormat.format(selectedDate)),
+        
+        // ignore: deprecated_member_use
         RaisedButton(
-          child: Text('Choose new date time'),
+          BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            border: Border.all(color: Colors.black.withOpacity(0.3)),
+          ),
+          child: Center(
+            child: Text('Choose new date time', style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500
+          ),),),
           onPressed: () async {
             showDateTimeDialog(context, initialDate: selectedDate,
                 onSelectedDate: (selectedDate) {
@@ -29,7 +40,7 @@ class _DateTimePickerWidget2State extends State<DateTimePickerWidget2> {
             });
           },
         ),
-      ],
+      ]
     );
   }
 }

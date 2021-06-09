@@ -1,17 +1,31 @@
-import 'package:bisklet/screens/sign_in/sign_up_screen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bisklet/screens/sign_in/login_screen.dart';
+import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
+import 'package:bisklet/screens/home_page/calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/home_page/main_home.dart';
 
-class ReservationPage extends StatefulWidget {
+class ReservationPage extends StatelessWidget {
   @override
-  State<StatefulWidget> createState() => InitState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'ubuntu',
+      ),
+      debugShowCheckedModeBanner: false,
+      home: mainPage(),
+    );
+  }
+}
+class mainPage extends StatefulWidget {
+  @override
+  _mainPageState createState() => _mainPageState();
 }
 
-class Reservationpage extends State<ReservationPage> {
-  Widget build(BuildContext context) => initWidget();
-
-  Widget initWidget() {
+class _mainPageState extends State<mainPage> {
+  String selectedType = "solo";
+  String selectedFrequency = "guided tour";
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       drawer: new Drawer(
         child: new ListView(
@@ -104,14 +118,27 @@ class Reservationpage extends State<ReservationPage> {
       ),
       backgroundColor: Color(0xFF66BB6A),
       appBar: AppBar(
-        title: Text("Home", style: TextStyle(
+        title: Text("Reservation", style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w700
         ),),
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
-
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+                color: Colors.white
+              ),
+            ),
+          ),
+        ]
+      ),
     );
   }
 }

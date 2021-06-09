@@ -1,3 +1,4 @@
+import 'package:bisklet/screens/home_page/DATE_TIME.dart';
 import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
 import 'package:bisklet/screens/home_page/calendar.dart';
@@ -175,7 +176,7 @@ class _mainPageState extends State<mainPage> {
                                 color: Color(0xffededed),
                               ),
                               child: (selectedType == "solo") ? Icon(Icons.check_circle,
-                              color: Colors.yellow[200],
+                              color: Colors.greenAccent,
                               size: 30,):Container(),
                             )
                           ],
@@ -209,7 +210,7 @@ class _mainPageState extends State<mainPage> {
                                 color: Color(0xffededed),
                               ),
                               child: (selectedType == "guided tour") ? Icon(Icons.check_circle,
-                                color: Colors.yellow[200],
+                                color: Colors.greenAccent,
                                 size: 30,):Container(),
                             )
                           ],
@@ -232,7 +233,7 @@ class _mainPageState extends State<mainPage> {
                           height: 50,
                           width: 110,
                           decoration: (selectedFrequency == "beginner") ? BoxDecoration(
-                            color: Colors.yellow[200],
+                            color: Colors.greenAccent,
                             borderRadius: BorderRadius.all(Radius.circular(10))
                           ) : BoxDecoration(
                             border: Border.all(color: Colors.black.withOpacity(0.3)),
@@ -252,7 +253,7 @@ class _mainPageState extends State<mainPage> {
                           height: 50,
                           width: 110,
                           decoration: (selectedFrequency == "Medium") ? BoxDecoration(
-                              color: Colors.yellow[200],
+                              color: Colors.greenAccent,
                               borderRadius: BorderRadius.all(Radius.circular(10))
                           ) : BoxDecoration(
                               border: Border.all(color: Colors.black.withOpacity(0.3)),
@@ -272,7 +273,7 @@ class _mainPageState extends State<mainPage> {
                           height: 50,
                           width: 110,
                           decoration: (selectedFrequency == "Professional") ? BoxDecoration(
-                              color: Colors.yellow[200],
+                              color: Colors.greenAccent,
                               borderRadius: BorderRadius.all(Radius.circular(10))
                           ) : BoxDecoration(
                               border: Border.all(color: Colors.black.withOpacity(0.3)),
@@ -285,16 +286,30 @@ class _mainPageState extends State<mainPage> {
                             ),),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
-                  
-                  Container(
-                    height: 200,
-                    child: DateTimePickerWidget(),
+                  SizedBox(height: 30,),
+                  InkWell(
+onTap: (){changetype("Choose new date time");},
+child: Container(   
+  height: 50,
+   width: 200,
+   decoration: (selectedFrequency == "Choose new date time") ? BoxDecoration(
+                              color: Colors.greenAccent,
+                              borderRadius: BorderRadius.all(Radius.circular(10))
+                          ) :
+                    BoxDecoration(
+                      color: Colors.greenAccent,
+                      border: Border.all(color: Colors.black.withOpacity(0.3)),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    SizedBox(height: 10,),
-                    
+                    child: Center(
+                    child: DateTimePickerWidget2(),
+                    ),
+ ),
+                  ),
+                    SizedBox(height: 70,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -302,7 +317,7 @@ class _mainPageState extends State<mainPage> {
                         onTap: () {
                           Navigator.push(context, 
                           MaterialPageRoute(
-                            builder: (context) => ReservationPage() 
+                            builder: (context) => ReservationPage()
                             ),
                           );
                         },
@@ -321,7 +336,7 @@ class _mainPageState extends State<mainPage> {
                         ),
                       )
                     ],
-                  ),
+                  )
                 ],
               ),
             ),
