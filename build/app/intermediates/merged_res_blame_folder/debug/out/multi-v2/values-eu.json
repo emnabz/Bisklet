@@ -1,9 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\eyana\\emna\\application_flutter\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-eu\\values-eu.xml",
+            "outputFile": "/home/emna/application_flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-eu/values-eu.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\eyana\\.gradle\\caches\\transforms-2\\files-2.1\\f2e1566e2c029969e7227130688d53f2\\jetified-play-services-base-17.1.0\\res\\values-eu\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -22,6 +23,9 @@
                 },
                 {
                     "source": "C:\\Users\\eyana\\.gradle\\caches\\transforms-2\\files-2.1\\c0741527c360327ad89f36209f57413d\\core-1.1.0\\res\\values-eu\\values-eu.xml",
+=======
+                    "source": "/home/emna/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/res/values-eu/values-eu.xml",
+>>>>>>> b96e03b17600d5b992c0ea542e4a85b7fde1e67d
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

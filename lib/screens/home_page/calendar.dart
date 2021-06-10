@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:bisklet/screens/sign_in/login_screen.dart';
-import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
-import 'package:bisklet/screens/home_page/main_home.dart';
 
 class DateTimePickerWidget extends StatefulWidget {
   @override
@@ -17,10 +14,8 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            body:Column(
+            body: Column(
 
-
-      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(dateFormat.format(selectedDate)),
         RaisedButton(
@@ -45,7 +40,9 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
               );
             });
           },
-        ),
+    shape: StadiumBorder(),
+    
+            ),
       ]
 ));
            

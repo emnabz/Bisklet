@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 #Thu Jun 10 11:27:15 WAT 2021
 path.3=classes_1.dex
 path.2=classes_0.dex
 path.1=classes.dex
+=======
+#Wed Jun 09 23:58:05 CET 2021
+base.0=/home/emna/application_flutter/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+>>>>>>> b96e03b17600d5b992c0ea542e4a85b7fde1e67d
 path.0=classes.dex
 base.3=C\:\\Users\\eyana\\emna\\application_flutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_1.dex
 base.2=C\:\\Users\\eyana\\emna\\application_flutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_0.dex
