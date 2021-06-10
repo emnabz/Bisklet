@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">597050213569-fnlm241afhj2ou2j3cl0dnhptqfvve8l.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">597050213569</string>
+    <string name="google_api_key" translatable="false">AIzaSyBAkUa17J_2u_EQJf19dA8Z5AWrTYsu13g</string>
+    <string name="google_app_id" translatable="false">1:597050213569:android:d4d53174ca54429d6d8040</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBAkUa17J_2u_EQJf19dA8Z5AWrTYsu13g</string>
+    <string name="google_storage_bucket" translatable="false">bisklet-60759.appspot.com</string>
+    <string name="project_id" translatable="false">bisklet-60759</string>
+</resources>

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/sign_in/sign_up_screen.dart';
 import 'package:bisklet/screens/sign_in/reset_password.dart';
@@ -10,11 +11,26 @@ class LoginScreen extends StatefulWidget {
 }
 
 class StartState extends State<LoginScreen> {
+  String _email, _password; 
+    final auth = FirebaseAuth.instance;
+  TextEditingController _emailController = new TextEditingController();
+  TextEditingController _passwordController = new TextEditingController();
+  @override
+  void initState(){
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+    super.initState();
+  }
+  @override
+  void dispose(){
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return initWidget();
   }
-
   initWidget() {
     return Scaffold(
       body: SingleChildScrollView(
@@ -87,6 +103,11 @@ class StartState extends State<LoginScreen> {
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
+                                onChanged: (value) {
+                  SetState(){
+                    _email = value.trim();
+                  }
+                },
               ),
             ),
 
@@ -119,6 +140,11 @@ class StartState extends State<LoginScreen> {
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
+                onChanged: (value) {
+                  SetState(){
+                    _password = value.trim();
+                  }
+                },
               ),
             ),
             Container(
@@ -136,6 +162,7 @@ class StartState extends State<LoginScreen> {
             ),
             GestureDetector(
               onTap: () { 
+                auth.signInWithEmailAndPassword(email: _email, password: _password);
                 Navigator.push(
                   context, 
                   MaterialPageRoute(builder: (context) => MainPage()));
@@ -184,6 +211,7 @@ class StartState extends State<LoginScreen> {
                     ),
                     onTap: () {
                       // Write Tap Code Here.
+                      auth.createUserWithEmailAndPassword(email: _email, password: _password);
                         Navigator.push(
                           context,
                           MaterialPageRoute(

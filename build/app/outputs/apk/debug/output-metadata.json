@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.bisklet",
+  "applicationId": "com.android.application",
   "variantName": "processDebugResources",
   "elements": [
     {

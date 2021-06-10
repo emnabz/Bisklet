@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "338755907499",
-    "project_id": "applicationflutter",
-    "storage_bucket": "applicationflutter.appspot.com"
+    "project_number": "597050213569",
+    "project_id": "bisklet-60759",
+    "storage_bucket": "bisklet-60759.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:338755907499:android:e7e0b191e0e3b6fbed2cee",
+        "mobilesdk_app_id": "1:597050213569:android:1e698f9a3f280c646d8040",
         "android_client_info": {
-          "package_name": "com.example.bisklet"
+          "package_name": "com.android.application"
         }
       },
       "oauth_client": [
         {
-          "client_id": "338755907499-sd2nlj2ig1f9kifidgsv45adlfnudkok.apps.googleusercontent.com",
+          "client_id": "597050213569-fnlm241afhj2ou2j3cl0dnhptqfvve8l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBHuSgbzt46_wFBvjCGJHgilb5yyBE6wsw"
+          "current_key": "AIzaSyBAkUa17J_2u_EQJf19dA8Z5AWrTYsu13g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "338755907499-sd2nlj2ig1f9kifidgsv45adlfnudkok.apps.googleusercontent.com",
+              "client_id": "597050213569-fnlm241afhj2ou2j3cl0dnhptqfvve8l.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

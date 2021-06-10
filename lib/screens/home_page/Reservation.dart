@@ -1,7 +1,9 @@
 import 'package:bisklet/screens/sign_in/sign_up_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/home_page/main_home.dart';
+import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
 
 class ReservationPage extends StatefulWidget {
   @override
