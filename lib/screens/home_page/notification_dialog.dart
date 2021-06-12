@@ -124,7 +124,6 @@ class _DateTimeDialogState extends State<DateTimeDialog> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              highlightColor: Colors.greenAccent[400],
             ),
           ],
         ),

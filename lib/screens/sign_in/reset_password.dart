@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:bisklet/screens/home_page/main_home.dart';
+import 'package:bisklet/firebase/auth.dart';
+import 'login_screen.dart';
+
 class Forgot extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<Forgot> {  
+  TextEditingController _email = TextEditingController();
+   bool isLoading = false;
+   @override
 Widget buildEmail() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,7 +70,33 @@ Widget buildLoginBtn(){
     // ignore: deprecated_member_use
     child: RaisedButton(
       elevation: 5,
-      onPressed: () => print('Resset button Pressed'),
+      onPressed: () { 
+        setState(() {
+                          isLoading = true;
+                        });
+                        AuthClass()
+                            .resetPassword(
+                          email: _email.text.trim(),
+                        )
+                            .then((value) {
+                          if (value == "Email sent") {
+                            setState(() {
+                              isLoading = false;
+                            });
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginScreen()),
+                                (route) => false);
+                          } else {
+                            setState(() {
+                              isLoading = false;
+                            });
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(SnackBar(content: Text(value)));
+                          }
+                        });
+                      },
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)
     ),
@@ -83,7 +116,7 @@ Widget buildLoginBtn(){
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-    body: AnnotatedRegion<SystemUiOverlayStyle>(
+    body: isLoading == false ? AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: GestureDetector(
         child: Stack(
@@ -124,15 +157,15 @@ Widget build(BuildContext context) {
                   buildEmail(),
                   SizedBox(height: 20),
                   buildLoginBtn(),
-                ],
+                ]
+                  ),
+              
               ),
-                )
-              )
+              ),
           ]
         )
-        )
-    )
-  );
-}
-
+        ),
+    ):Center(child: CircularProgressIndicator()),
+    );
+  }
 }

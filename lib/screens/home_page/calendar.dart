@@ -65,5 +65,6 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
         initialDate: DateTime.now().add(Duration(seconds: 1)),
         firstDate: DateTime.now(),
         lastDate: DateTime(2100),
+        
       );
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/sign_in/onboard.dart';
+import 'package:bisklet/firebase/auth.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -7,12 +8,16 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class InitState extends State<SignUpScreen> {
+
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) => initWidget();
 
   Widget initWidget() {
     return Scaffold(
-        body: SingleChildScrollView(
+        body: isLoading == false ? SingleChildScrollView(
             child: Column(
               children: [
                 Container(
@@ -102,6 +107,7 @@ class InitState extends State<SignUpScreen> {
                   ),
                   child: TextField(
                     cursorColor: Color(0xFF66BB6A),
+                    controller: _email,
                     decoration: InputDecoration(
                       icon: Icon(
                         Icons.email,
@@ -161,6 +167,7 @@ class InitState extends State<SignUpScreen> {
                     ],
                   ),
                   child: TextField(
+                    controller: _password,
                     obscureText: true,
                     cursorColor: Color(0xFF66BB6A),
                     decoration: InputDecoration(
@@ -177,11 +184,33 @@ class InitState extends State<SignUpScreen> {
                 ),
 
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => onboarding()));
-                  },
+                  onTap: () async {
+                    setState(() {
+                            isLoading = true;
+                          });
+                          AuthClass()
+                              .createAccount(
+                                  email: _email.text.trim(),
+                                  password: _password.text.trim())
+                              .then((value) {
+                            if (value == "Account created") {
+                              setState(() {
+                                isLoading = false;
+                              });
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => onboarding()),
+                                  (route) => false);
+                            } else {
+                              setState(() {
+                                isLoading = false;
+                              });
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(content: Text(value)));
+                            }
+                          });
+                        },
                   child: Container(
                     alignment: Alignment.center,
                     margin: EdgeInsets.only(left: 20, right: 20, top: 70),
@@ -231,9 +260,8 @@ class InitState extends State<SignUpScreen> {
                     ],
                   ),
                 )
-              ],
+              ],        
             )
-        )
-    );
+    ):Center(child: CircularProgressIndicator()));
   }
 }

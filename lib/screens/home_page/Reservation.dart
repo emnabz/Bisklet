@@ -2,9 +2,7 @@ import 'package:bisklet/screens/home_page/about.dart';
 import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
 import 'package:flutter/material.dart';
-import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/home_page/main_home.dart';
-import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
 
 class ReservationPage extends StatelessWidget {
   @override

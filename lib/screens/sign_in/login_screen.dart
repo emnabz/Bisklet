@@ -1,39 +1,24 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/sign_in/sign_up_screen.dart';
 import 'package:bisklet/screens/sign_in/reset_password.dart';
 import 'package:bisklet/screens/home_page/main_home.dart';
-enum AuthMode {Signup, Login}
+import 'package:bisklet/firebase/auth.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => StartState();
 }
-
 class StartState extends State<LoginScreen> {
-  String _email, _password; 
-    final auth = FirebaseAuth.instance;
-  TextEditingController _emailController = new TextEditingController();
-  TextEditingController _passwordController = new TextEditingController();
-  @override
-  void initState(){
-    _emailController = TextEditingController();
-    _passwordController = TextEditingController();
-    super.initState();
-  }
-  @override
-  void dispose(){
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
     return initWidget();
   }
   initWidget() {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: isLoading == false ? SingleChildScrollView(
         child: Column(
           children: [
             Container(
@@ -93,8 +78,9 @@ class StartState extends State<LoginScreen> {
                 ],
               ),
               child: TextField(
+                controller: _email,
                 cursorColor: Colors.green[600],
-                decoration: InputDecoration(
+                decoration: InputDecoration(  
                   icon: Icon(
                     Icons.email,
                     color: Colors.green[600],
@@ -103,11 +89,6 @@ class StartState extends State<LoginScreen> {
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
-                                onChanged: (value) {
-                  SetState(){
-                    _email = value.trim();
-                  }
-                },
               ),
             ),
 
@@ -128,6 +109,7 @@ class StartState extends State<LoginScreen> {
                 ],
               ),
               child: TextField(
+                controller: _password,
                 cursorColor: Colors.black,
                 obscureText: true,
                 decoration: InputDecoration(
@@ -140,11 +122,6 @@ class StartState extends State<LoginScreen> {
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
-                onChanged: (value) {
-                  SetState(){
-                    _password = value.trim();
-                  }
-                },
               ),
             ),
             Container(
@@ -161,11 +138,33 @@ class StartState extends State<LoginScreen> {
               ),
             ),
             GestureDetector(
-              onTap: () { 
-                auth.signInWithEmailAndPassword(email: _email, password: _password);
-                Navigator.push(
+              onTap: () async {
+                print(_email);
+                print(_password);
+                setState((){
+                isLoading = true;
+                });
+                AuthClass().signIN(
+                email: _email.text.trim(),
+                password: _password.text.trim()).then((value) {
+                  if (value == 'Welcome') {
+                    setState(() {
+                      isLoading = false;
+                    }
+                    );
+                Navigator.pushAndRemoveUntil(
                   context, 
-                  MaterialPageRoute(builder: (context) => MainPage()));
+                  MaterialPageRoute(builder: (context) => MainPage()), 
+                  (route) => false);
+              }
+              else
+              setState((){
+                isLoading = false;
+              }
+                );
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(value)));
+                }
+                );
               },
               child: Container(
                 alignment: Alignment.center,
@@ -209,9 +208,7 @@ class StartState extends State<LoginScreen> {
                           color: Colors.green[800]
                       ),
                     ),
-                    onTap: () {
-                      // Write Tap Code Here.
-                      auth.createUserWithEmailAndPassword(email: _email, password: _password);
+                    onTap: () async {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -226,6 +223,9 @@ class StartState extends State<LoginScreen> {
           ],
         )
       )
+      : Center(
+              child: CircularProgressIndicator(),
+            ),
     );
   }
 }
