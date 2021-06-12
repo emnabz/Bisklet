@@ -113,7 +113,7 @@ class InitState extends State<SignUpScreen> {
                         Icons.email,
                         color: Color(0xFF66BB6A),
                       ),
-                      hintText: "Email",
+                      hintText: "Enter Email",
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
                     ),
@@ -202,7 +202,8 @@ class InitState extends State<SignUpScreen> {
                                   MaterialPageRoute(
                                       builder: (context) => onboarding()),
                                   (route) => false);
-                            } else {
+                            }
+                            else {
                               setState(() {
                                 isLoading = false;
                               });
@@ -244,7 +245,7 @@ class InitState extends State<SignUpScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Have Already Member?"),
+                      Text("Already A Member?"),
                       GestureDetector(
                         child: Text(
                           "Login Now",

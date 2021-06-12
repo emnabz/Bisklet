@@ -88,13 +88,12 @@ Widget buildLoginBtn(){
                                 MaterialPageRoute(
                                     builder: (context) => LoginScreen()),
                                 (route) => false);
-                          } else {
+                          }
                             setState(() {
                               isLoading = false;
                             });
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(SnackBar(content: Text(value)));
-                          }
                         });
                       },
       padding: EdgeInsets.all(15),
