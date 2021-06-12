@@ -1,9 +1,17 @@
+import 'package:bisklet/screens/home_page/Reservation.dart';
+import 'package:bisklet/screens/home_page/about.dart';
 import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/home_page/main_home.dart';
+import 'package:bisklet/screens/home_page/calendar/button_widget.dart';
+import 'package:bisklet/screens/home_page/calendar/date_picker_widget.dart';
+import 'package:bisklet/screens/home_page/calendar/date_range.dart';
+import 'package:bisklet/screens/home_page/calendar/datetimepicker.dart';
+import 'package:bisklet/screens/home_page/calendar/timepicker.dart';
 
-class AboutUs extends StatelessWidget {
+
+class Buttonmain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -95,7 +103,7 @@ class _mainPageState extends State<mainPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SettingsUI()
+                    builder: (context) => AboutUs()
                   )
                 );
               },  
@@ -115,7 +123,7 @@ class _mainPageState extends State<mainPage> {
           ],
         )
       ),
-      backgroundColor: Color(0xFF66BB6A),
+       backgroundColor: Color(0xFF66BB6A),
       appBar: AppBar(
         title: Text("About Bisklet", style: TextStyle(
           color: Colors.white,
@@ -134,10 +142,69 @@ class _mainPageState extends State<mainPage> {
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
                 color: Colors.white
               ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+InkWell(
+onTap: (){changetype("Date");},
+child: Container(   
+  
+  height: 90,
+   width: 200,
+                 margin: EdgeInsets.only(left: 80, right: 20, top: 0),
+                    child: Center(
+                    child: DatePickerWidget(),                    
+                    ),
+ ),
+                  ),
+                  SizedBox(height: 10,),
+InkWell(
+onTap: (){changetype("Time");},
+child: Container(   
+  
+  height: 90,
+   width: 200,
+                 margin: EdgeInsets.only(left: 80, right: 20, top: 0),
+                    child: Center(
+                    child: TimePickerWidget(),                    
+                    ),
+ ),
+                  ),
+                  InkWell(
+onTap: (){changetype("Date Range");},
+child: Container(   
+  
+  height: 90,
+   width: 200,
+                 margin: EdgeInsets.only(left: 80, right: 20, top: 0),
+                    child: Center(
+                    child: DateRangePickerWidget(),
+                    ),                 
+                    ),
+                  )
+                    ],
+              ),
             ),
-          ),
-        ]
+          )
+        ],
       ),
     );
+  }
+                  
+          
+
+void changetrip(String type)
+  {
+    selectedType = type;
+    setState(() {
+
+    });
+  }
+  void changetype(String frequency)
+  {
+    selectedFrequency = frequency;
+    setState(() {
+
+    });
   }
 }

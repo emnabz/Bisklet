@@ -1,4 +1,4 @@
-import 'package:bisklet/screens/home_page/DATE_TIME.dart';
+import 'package:bisklet/screens/home_page/calendar/date_picker_widget.dart';
 import 'package:bisklet/screens/home_page/about.dart';
 import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
@@ -308,7 +308,7 @@ child: Container(
    width: 250,
                  margin: EdgeInsets.only(left: 50, right: 20, top: 12),
                     child: Center(
-                    child: DateTimePickerWidget2(),
+                    child: DatePickerWidget(),
                     ),
  ),
                   ),
