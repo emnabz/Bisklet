@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/sign_in/onboard.dart';
 import 'package:bisklet/firebase/auth.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 class SignUpScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => InitState();
 }
 
 class InitState extends State<SignUpScreen> {
-
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
+  TextEditingController _phone = TextEditingController();
+  TextEditingController _Fullname = TextEditingController();
   bool isLoading = false;
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
   @override
   Widget build(BuildContext context) => initWidget();
 
@@ -77,6 +79,7 @@ class InitState extends State<SignUpScreen> {
                   ),
                   child: TextField(
                     cursorColor: Color(0xFF66BB6A),
+                    controller: _Fullname,
                     decoration: InputDecoration(
                       icon: Icon(
                         Icons.person,
@@ -138,6 +141,7 @@ class InitState extends State<SignUpScreen> {
                   ),
                   child: TextField(
                     cursorColor: Color(0xFF66BB6A),
+                    controller: _phone,
                     decoration: InputDecoration(
                       focusColor: Color(0xFF66BB6A),
                       icon: Icon(
@@ -184,7 +188,7 @@ class InitState extends State<SignUpScreen> {
                 ),
 
                 GestureDetector(
-                  onTap: () async {
+                  onTap: () {
                     setState(() {
                             isLoading = true;
                           });
@@ -194,7 +198,9 @@ class InitState extends State<SignUpScreen> {
                                   password: _password.text.trim())
                               .then((value) {
                             if (value == "Account created") {
-                              setState(() {
+                              setState(() async{
+                                await users.add({'Fullname': _Fullname.text.trim(), 'Phone':_phone.text.trim(), 'Email': _email.text.trim(), 'password': _password.text.trim()}).then((value) => print("User Added"))
+          .catchError((error) => print("Failed to add user: $error"));
                                 isLoading = false;
                               });
                               Navigator.pushAndRemoveUntil(
