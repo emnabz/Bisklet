@@ -66,7 +66,7 @@ class HeaderWidget extends StatelessWidget {
             title,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 24,
+              fontSize: 3,
               fontWeight: FontWeight.bold,
             ),
           ),

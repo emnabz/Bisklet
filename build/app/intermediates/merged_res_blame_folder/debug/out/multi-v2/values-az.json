@@ -4,11 +4,24 @@
             "outputFile": "/home/emna/application_flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-az/values-az.xml",
             "map": [
                 {
-<<<<<<< HEAD
-                    "source": "C:\\Users\\eyana\\.gradle\\caches\\transforms-2\\files-2.1\\c0741527c360327ad89f36209f57413d\\core-1.1.0\\res\\values-az\\values-az.xml",
-=======
-                    "source": "/home/emna/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/res/values-az/values-az.xml",
->>>>>>> b96e03b17600d5b992c0ea542e4a85b7fde1e67d
+                    "source": "/home/emna/.gradle/caches/transforms-2/files-2.1/8656f464774072763b6cf2c11f6aeb28/jetified-play-services-basement-17.1.0/res/values-az/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "220",
+                        "endOffsets": "467"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1275",
+                        "endColumns": "220",
+                        "endOffsets": "1491"
+                    }
+                },
+                {
+                    "source": "/home/emna/.gradle/caches/transforms-2/files-2.1/c0741527c360327ad89f36209f57413d/core-1.1.0/res/values-az/values-az.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -25,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\eyana\\.gradle\\caches\\transforms-2\\files-2.1\\f2e1566e2c029969e7227130688d53f2\\jetified-play-services-base-17.1.0\\res\\values-az\\values.xml",
+                    "source": "/home/emna/.gradle/caches/transforms-2/files-2.1/f2e1566e2c029969e7227130688d53f2/jetified-play-services-base-17.1.0/res/values-az/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -39,23 +52,6 @@
                         "startOffsets": "105,216,403,538,650,855,990,1140,1496,1721,1833,2013,2152,2355,2541,2635,2730",
                         "endColumns": "110,186,134,111,204,134,149,134,224,111,179,138,202,185,93,94,109",
                         "endOffsets": "211,398,533,645,850,985,1135,1270,1716,1828,2008,2147,2350,2536,2630,2725,2835"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\eyana\\.gradle\\caches\\transforms-2\\files-2.1\\8656f464774072763b6cf2c11f6aeb28\\jetified-play-services-basement-17.1.0\\res\\values-az\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "220",
-                        "endOffsets": "467"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1275",
-                        "endColumns": "220",
-                        "endOffsets": "1491"
                     }
                 }
             ]

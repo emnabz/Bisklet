@@ -28,11 +28,17 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
 
   Future pickDate(BuildContext context) async {
     final initialDate = DateTime.now();
-    final newDate = await showDatePicker(
+    final newDate = await 
+    showDatePicker(
       context: context,
       initialDate: date ?? initialDate,
-      firstDate: DateTime(DateTime.now().year - 5),
-      lastDate: DateTime(DateTime.now().year + 5),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2025),
+      builder: (context, child) {
+        return Theme(data: ThemeData(primarySwatch: Colors.green, splashColor: Colors.green),
+        child: child,
+    );
+      }
     );
 
     if (newDate == null) return;

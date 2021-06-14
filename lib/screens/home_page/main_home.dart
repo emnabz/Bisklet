@@ -23,6 +23,7 @@ class mainPage extends StatefulWidget {
 }
 
 class _mainPageState extends State<mainPage> {
+  int _value = 1;
   String selectedType = "solo";
   String selectedFrequency = "guided tour";
   @override
@@ -298,21 +299,81 @@ class _mainPageState extends State<mainPage> {
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),),
-                  SizedBox(height: 15,),
+                  SizedBox(height: 0,),
 
 InkWell(
-onTap: (){changetype("Calendar");},
+onTap: (){changetype("Select Date");},
 child: Container(   
-  
   height: 100,
    width: 250,
-                 margin: EdgeInsets.only(left: 50, right: 20, top: 12),
+                 margin: EdgeInsets.only(left: 50, right: 20, top: 0),
                     child: Center(
                     child: DatePickerWidget(),
                     ),
  ),
                   ),
-                    SizedBox(height: 40,),
+                  SizedBox(height: 0),
+InkWell(
+onTap: (){changetype("Choose your Time");},
+child: Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10)
+         shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black.withOpacity(0.3))
+         ),      
+
+      ),
+      
+  height: 50,
+   width: 250,
+   
+     margin: EdgeInsets.only(left: 50, right: 20, top: 0),
+  child: Center( 
+  child: ElevatedButton(
+    style: ElevatedButton.styleFrom(
+      minimumSize: Size.fromHeight(40),
+      primary: Colors.white,
+   shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black.withOpacity(0.3))),      
+    ),
+    onPressed: () {},
+    
+          child: DropdownButton(
+              value: _value,
+              items: [
+                DropdownMenuItem(
+                  child: Text("Select Period", style:
+                  TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
+                  ),
+                  value: 1,
+                ),
+                DropdownMenuItem(
+                  child: Text("one hour"),
+                  value: 2,
+                ),
+                DropdownMenuItem(
+                  child: Text("two hours"),
+                  value: 3
+                ),
+                DropdownMenuItem(
+                    child: Text("a day"),
+                    value: 4
+                )
+              ],
+              onChanged: (value) {
+                setState(() {
+                  _value = value;
+                });
+              }),
+
+    
+        
+  ),
+),
+),
+),
+                  SizedBox(height: 50,),
+
+                    
+                    
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
