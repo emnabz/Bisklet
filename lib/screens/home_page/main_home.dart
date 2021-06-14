@@ -4,6 +4,7 @@ import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/home_page/Reservation.dart';
+import 'package:bisklet/screens/home_page/calendar/time_picker.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -179,7 +180,7 @@ class _mainPageState extends State<mainPage> {
                                 color: Color(0xffededed),
                               ),
                               child: (selectedType == "solo") ? Icon(Icons.check_circle,
-                              color: Colors.greenAccent[400],
+                              color: Colors.green,
                               size: 30,):Container(),
                             )
                           ],
@@ -215,7 +216,7 @@ class _mainPageState extends State<mainPage> {
                                 color: Color(0xffededed),
                               ),
                               child: (selectedType == "guided tour") ? Icon(Icons.check_circle,
-                                color: Colors.greenAccent[400],
+                                color: Colors.green,
                                 size: 30,):Container(),
                             )
                           ],
@@ -238,7 +239,7 @@ class _mainPageState extends State<mainPage> {
                           height: 50,
                           width: 110,
                           decoration: (selectedFrequency == "beginner") ? BoxDecoration(
-                            color: Colors.greenAccent[400],
+                            color: Colors.green,
                             borderRadius: BorderRadius.all(Radius.circular(10))
                           ) : BoxDecoration(
                             border: Border.all(color: Colors.black.withOpacity(0.3)),
@@ -258,7 +259,7 @@ class _mainPageState extends State<mainPage> {
                           height: 50,
                           width: 110,
                           decoration: (selectedFrequency == "Medium") ? BoxDecoration(
-                              color: Colors.greenAccent[400],
+                              color: Colors.green,
                               borderRadius: BorderRadius.all(Radius.circular(10))
                           ) : BoxDecoration(
                               border: Border.all(color: Colors.black.withOpacity(0.3)),
@@ -278,7 +279,7 @@ class _mainPageState extends State<mainPage> {
                           height: 50,
                           width: 110,
                           decoration: (selectedFrequency == "Professional") ? BoxDecoration(
-                              color: Colors.greenAccent[400],
+                              color: Colors.green,
                               borderRadius: BorderRadius.all(Radius.circular(10))
                           ) : BoxDecoration(
                               border: Border.all(color: Colors.black.withOpacity(0.3)),
@@ -295,11 +296,10 @@ class _mainPageState extends State<mainPage> {
                     ],
                   ),
                   SizedBox(height: 20),
-                  Text("Choose Your Time", style: TextStyle(
+                  Text("Choose Your Date", style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),),
-                  SizedBox(height: 0,),
 
 InkWell(
 onTap: (){changetype("Select Date");},
@@ -313,15 +313,31 @@ child: Container(
  ),
                   ),
                   SizedBox(height: 0),
+                  InkWell(
+child: Container(   
+  height: 50,
+   width: 250,
+                 margin: EdgeInsets.only(left: 50, right: 20, top: 0),
+                    child: Center(
+                    child: TimePickerWidget(),
+                    ),
+ ),
+                  ),
+                  SizedBox(height: 50),
+                  Text("Choose Your Time", style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),),
+                  SizedBox(height: 10,),
 InkWell(
 onTap: (){changetype("Choose your Time");},
 child: Container(
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(10)
-         shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black.withOpacity(0.3))
+      borderRadius: BorderRadius.circular(10),
          ),      
+                
 
-      ),
+    
       
   height: 50,
    width: 250,
@@ -332,30 +348,34 @@ child: Container(
     style: ElevatedButton.styleFrom(
       minimumSize: Size.fromHeight(40),
       primary: Colors.white,
-   shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black.withOpacity(0.3))),      
+   shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black.withOpacity(0.3))),
+   
     ),
     onPressed: () {},
+    
     
           child: DropdownButton(
               value: _value,
               items: [
+                
                 DropdownMenuItem(
-                  child: Text("Select Period", style:
-                  TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
-                  ),
+                  child: Text("one hour", style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                  ),),
                   value: 1,
                 ),
                 DropdownMenuItem(
-                  child: Text("one hour"),
-                  value: 2,
+                  child: Text("Half Day" , style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,)),
+                  value: 2
                 ),
                 DropdownMenuItem(
-                  child: Text("two hours"),
-                  value: 3
-                ),
-                DropdownMenuItem(
-                    child: Text("a day"),
-                    value: 4
+                    child: Text("a day" , style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,)),
+                    value: 3
                 )
               ],
               onChanged: (value) {
@@ -370,7 +390,7 @@ child: Container(
 ),
 ),
 ),
-                  SizedBox(height: 50,),
+                  SizedBox(height: 30,),
 
                     
                     

@@ -51,6 +51,7 @@ class StartState extends State<LoginScreen> {
                         child: Text(
                           "Login",
                           style: TextStyle(
+                            
                               fontSize: 20,
                               color: Colors.white
                           ),
