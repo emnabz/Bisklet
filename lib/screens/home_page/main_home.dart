@@ -78,14 +78,7 @@ class _mainPageState extends State<mainPage> {
             new ListTile(
               leading: Icon(Icons.map_rounded),
               title: new Text('Maps'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MainPage()
-                  )
-                );
-              },
+              onTap: () {}
             ),
             new ListTile(
               leading: Icon(Icons.notifications_on_outlined),
@@ -315,7 +308,7 @@ child: Container(
                   SizedBox(height: 0),
                   InkWell(
 child: Container(   
-  height: 50,
+  height: 10,
    width: 250,
                  margin: EdgeInsets.only(left: 50, right: 20, top: 0),
                     child: Center(
@@ -323,7 +316,7 @@ child: Container(
                     ),
  ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 0),
                   Text("Choose Your Time", style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600
@@ -419,7 +412,7 @@ child: Container(
                           ),),
                         ),
                       )
-                    ],
+                    ],  
                   )
                 ],
               ),

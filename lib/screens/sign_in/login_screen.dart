@@ -12,6 +12,7 @@ class StartState extends State<LoginScreen> {
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
   bool isLoading = false;
+  bool _passwordVisible = false;
   @override
   Widget build(BuildContext context) {
     return initWidget();
@@ -112,7 +113,7 @@ class StartState extends State<LoginScreen> {
               child: TextField(
                 controller: _password,
                 cursorColor: Colors.black,
-                obscureText: true,
+                obscureText: !_passwordVisible,
                 decoration: InputDecoration(
                   focusColor: Colors.green[600],
                   icon: Icon(
@@ -122,9 +123,22 @@ class StartState extends State<LoginScreen> {
                   hintText: "Enter Password",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
-                ),
-              ),
+                  suffixIcon: IconButton(
+            icon: Icon(
+              _passwordVisible
+               ? Icons.visibility
+               : Icons.visibility_outlined,
+               color: Colors.grey,
+               ),
+            onPressed: () {setState(() {
+                   _passwordVisible = !_passwordVisible;
+               });
+             },
             ),
+          ),
+
+                ),
+               ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
               alignment: Alignment.centerRight,

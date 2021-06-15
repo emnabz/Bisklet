@@ -74,14 +74,7 @@ class _mainPageState extends State<mainPage> {
             new ListTile(
               leading: Icon(Icons.map_rounded),
               title: new Text('Maps'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MainPage()
-                  )
-                );
-              },
+              onTap: () {}
             ),
             new ListTile(
               leading: Icon(Icons.notifications_on_outlined),
@@ -95,7 +88,7 @@ class _mainPageState extends State<mainPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SettingsUI()
+                    builder: (context) => AboutUs()
                   )
                 );
               },  

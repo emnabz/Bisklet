@@ -51,7 +51,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               ),
               SizedBox(
-                height: 15,
+                height: 4,
               ),
               Center(
                 child: Stack(
@@ -92,7 +92,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                             color: Colors.green,
                           ),
                           child: Icon(
-                            Icons.edit,
+                            Icons.add_a_photo_rounded,
                             color: Colors.white,
                           ),
                         )),
@@ -100,14 +100,14 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
               ),
               SizedBox(
-                height: 35,
+                height: 10,
               ),
               buildTextField("Full Name", "", false),
               buildTextField("E-mail", "", false),
               buildTextField("Password", "", true),
               buildTextField("Phone Number", "", false),
               SizedBox(
-                height: 35,
+                height: 3,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,22 +144,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   )
                 ],
               ),
-              SizedBox(
-              height: 35,
-            ),
-            Center(
-              child: OutlineButton(
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                onPressed: () {Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => LoginScreen()));},
-                child: Text("SIGN OUT",
-                    style: TextStyle(
-                        fontSize: 16, letterSpacing: 2.2, color: Colors.black)),
-              ),
-            )
+              
             ],
           ),
         ),
@@ -172,7 +157,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35.0),
       child: TextField(
-        obscureText: isPasswordTextField ? showPassword : true,
+        obscureText: isPasswordTextField ? showPassword : false,
         decoration: InputDecoration(
             suffixIcon: isPasswordTextField
                 ? IconButton(
