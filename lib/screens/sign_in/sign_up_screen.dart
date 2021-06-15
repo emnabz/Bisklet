@@ -197,17 +197,25 @@ class InitState extends State<SignUpScreen> {
                                   email: _email.text.trim(),
                                   password: _password.text.trim())
                               .then((value) {
+                                  isLoading = false;
                             if (value == "Account created") {
-                              setState(() async{
-                                await users.add({'Fullname': _Fullname.text.trim(), 'Phone':_phone.text.trim(), 'Email': _email.text.trim(), 'password': _password.text.trim()}).then((value) => print("User Added"))
-          .catchError((error) => print("Failed to add user: $error"));
-                                isLoading = false;
-                              });
+                              isLoading = false;
                               Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => onboarding()),
                                   (route) => false);
+                              setState(() async{
+                                await users.add({
+            'Fullname': _Fullname.text.trim(), 
+            'Email': _email.text.trim(),
+            'Phone': _phone.text.trim(),
+            'password': _password.text.trim() // 42
+          })
+          .then((value) => print("User Added"))
+          .catchError((error) => print("Failed to add user: $error"));
+                              }
+                              );     
                             }
                             else {
                               setState(() {
