@@ -1,10 +1,9 @@
-import 'package:bisklet/screens/home_page/calendar/date_picker_widget.dart';
 import 'package:bisklet/screens/home_page/about.dart';
 import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/home_page/Reservation.dart';
-import 'package:bisklet/screens/home_page/calendar/time_picker.dart';
+import 'package:bisklet/screens/home_page/page2.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -135,7 +134,7 @@ class _mainPageState extends State<mainPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 20,),
+                  SizedBox(height: 5,),
                   Text("Choose your trip", style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600
@@ -221,8 +220,9 @@ class _mainPageState extends State<mainPage> {
                   Text("Choose your bike", style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600
-                  ),),
-                  SizedBox(height: 20,),
+                    
+                  ),
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -231,6 +231,7 @@ class _mainPageState extends State<mainPage> {
                         child: Container(
                           height: 50,
                           width: 110,
+                           margin: EdgeInsets.only(left: 0, right: 0, top: 30),
                           decoration: (selectedFrequency == "beginner") ? BoxDecoration(
                             color: Colors.green,
                             borderRadius: BorderRadius.all(Radius.circular(10))
@@ -251,6 +252,7 @@ class _mainPageState extends State<mainPage> {
                         child: Container(
                           height: 50,
                           width: 110,
+                          margin: EdgeInsets.only(left: 0, right: 0, top: 30),
                           decoration: (selectedFrequency == "Medium") ? BoxDecoration(
                               color: Colors.green,
                               borderRadius: BorderRadius.all(Radius.circular(10))
@@ -271,6 +273,7 @@ class _mainPageState extends State<mainPage> {
                         child: Container(
                           height: 50,
                           width: 110,
+                          margin: EdgeInsets.only(left: 0, right: 0, top: 30),
                           decoration: (selectedFrequency == "Professional") ? BoxDecoration(
                               color: Colors.green,
                               borderRadius: BorderRadius.all(Radius.circular(10))
@@ -286,107 +289,10 @@ class _mainPageState extends State<mainPage> {
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Text("Choose Your Date", style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),),
-
-InkWell(
-onTap: (){changetype("Select Date");},
-child: Container(   
-  height: 100,
-   width: 250,
-                 margin: EdgeInsets.only(left: 50, right: 20, top: 0),
-                    child: Center(
-                    child: DatePickerWidget(),
-                    ),
- ),
-                  ),
-                  SizedBox(height: 0),
-                  InkWell(
-child: Container(   
-  height: 10,
-   width: 250,
-                 margin: EdgeInsets.only(left: 50, right: 20, top: 0),
-                    child: Center(
-                    child: TimePickerWidget(),
-                    ),
- ),
-                  ),
-                  SizedBox(height: 0),
-                  Text("Choose Your Time", style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),),
-                  SizedBox(height: 10,),
-InkWell(
-onTap: (){changetype("Choose your Time");},
-child: Container(
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(10),
-         ),      
                 
-
-    
-      
-  height: 50,
-   width: 250,
-   
-     margin: EdgeInsets.only(left: 50, right: 20, top: 0),
-  child: Center( 
-  child: ElevatedButton(
-    style: ElevatedButton.styleFrom(
-      minimumSize: Size.fromHeight(40),
-      primary: Colors.white,
-   shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black.withOpacity(0.3))),
-   
-    ),
-    onPressed: () {},
-    
-    
-          child: DropdownButton(
-              value: _value,
-              items: [
-                
-                DropdownMenuItem(
-                  child: Text("one hour", style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                  ),),
-                  value: 1,
-                ),
-                DropdownMenuItem(
-                  child: Text("Half Day" , style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,)),
-                  value: 2
-                ),
-                DropdownMenuItem(
-                    child: Text("a day" , style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,)),
-                    value: 3
-                )
-              ],
-              onChanged: (value) {
-                setState(() {
-                  _value = value;
-                });
-              }),
-
-    
-        
-  ),
-),
-),
-),
-                  SizedBox(height: 30,),
-
-                    
-                    
+                    ],  
+                  ),
+                  SizedBox(height:5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -394,7 +300,7 @@ child: Container(
                         onTap: () {
                           Navigator.push(context, 
                           MaterialPageRoute(
-                            builder: (context) => ReservationPage()
+                            builder: (context) => New()
                             ),
                           );
                         },
@@ -404,14 +310,14 @@ child: Container(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             color: Color(0xFF66BB6A)
                           ),
-                          margin: EdgeInsets.only(left: 20, right: 20, top: 12),
-                          child: Text("Apply", style: TextStyle(
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 65),
+                          child: Text("Next", style: TextStyle(
                             fontSize: 19,
                             color: Colors.white,
                             fontWeight: FontWeight.w600
-                          ),),
+                            ),),
+                          ),
                         ),
-                      )
                     ],  
                   )
                 ],

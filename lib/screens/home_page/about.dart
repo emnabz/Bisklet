@@ -142,26 +142,36 @@ Void initState() {
                 color: Colors.white
               ),
               child: Column(
-                children: <Widget> [
-                  Expanded(
-                    child: Column(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Text(data, style: TextStyle(fontSize: 20, height: 2,),
-                    ) 
-                  ] 
-                ),
-              ),            
-            ] 
-          ),       
+                    children: <Widget> [
+                      Expanded(
+                        child: Column(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(data, style: TextStyle(fontSize: 20, height: 2,),
+                        ) 
+                      ] 
+                    ),
+                  ),          
+                ] 
+              ),       
         ),
       ),
+      
     ]
+    
   ),
+  floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        child: const Icon(Icons.navigation),
+        backgroundColor: Colors.green,
+      ),
 );
 }
 }
+
 
 
 

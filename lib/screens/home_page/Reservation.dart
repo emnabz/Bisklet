@@ -118,7 +118,7 @@ class _mainPageState extends State<mainPage> {
       ),
       backgroundColor: Color(0xFF66BB6A),
       appBar: AppBar(
-        title: Text("About Bisklet", style: TextStyle(
+        title: Text("Reservation", style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w700
         ),),
