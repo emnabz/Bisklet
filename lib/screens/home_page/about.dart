@@ -1,7 +1,10 @@
+import 'dart:ffi';
+
 import 'package:bisklet/screens/sign_in/login_screen.dart';
 import 'package:bisklet/screens/sign_in/profile_pages/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:bisklet/screens/home_page/main_home.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 class AboutUs extends StatelessWidget {
   @override
@@ -21,8 +24,19 @@ class mainPage extends StatefulWidget {
 }
 
 class _mainPageState extends State<mainPage> {
-  String selectedType = "solo";
-  String selectedFrequency = "guided tour";
+  String data = '';
+fetchFieldData() async{
+  String responseText;
+  responseText = await rootBundle.loadString('textFiles/textDemo.txt');
+  setState(() {
+    data = responseText;
+  });
+}
+@override
+Void initState() {
+  fetchFieldData();
+  super.initState();
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,11 +141,27 @@ class _mainPageState extends State<mainPage> {
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
                 color: Colors.white
               ),
-            ),
-          ),
-        ]
-      ),
-    );
-  }
+              child: Column(
+                children: <Widget> [
+                  Expanded(
+                    child: Column(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(data, style: TextStyle(fontSize: 20, height: 2,),
+                    ) 
+                  ] 
+                )
+              )            
+            ] 
+          )        
+        )
+      )
+    ]
+  )
+);
 }
+}
+
+
 
