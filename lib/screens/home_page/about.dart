@@ -151,14 +151,14 @@ Void initState() {
                         Text(data, style: TextStyle(fontSize: 20, height: 2,),
                     ) 
                   ] 
-                )
-              )            
+                ),
+              ),            
             ] 
-          )        
-        )
-      )
+          ),       
+        ),
+      ),
     ]
-  )
+  ),
 );
 }
 }
