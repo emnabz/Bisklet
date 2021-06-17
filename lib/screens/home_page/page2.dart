@@ -154,7 +154,7 @@ child: Container(
                   ),
                   SizedBox(height: 0),
                   SizedBox(height: 20,),
-                  Text("Choose Your Date", style: TextStyle(
+                  Text("Choose Your Time", style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),),
@@ -169,8 +169,8 @@ child: Container(
                     ),
  ),
                   ),
-                                    SizedBox(height: 10,),
-                  Text("Choose Your Time", style: TextStyle(
+                  SizedBox(height: 10,),
+                  Text("Choose Your Period of time", style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                   ),),
@@ -232,7 +232,7 @@ child: Container(
 ),
 ),
 ),              
-SizedBox(height:12),
+SizedBox(height:50),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -258,8 +258,11 @@ SizedBox(height:12),
                             ),),
                           ),
                         ),
-                    ],  
-                  )
+                    ], 
+                  ),
+                  Row(
+                    
+                  ),
                 ],
               ),
             ),
