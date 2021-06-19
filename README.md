@@ -1,16 +1,17 @@
-# besklet
+# bisklet
 
-A new Flutter project.
+A Rencting bicycles project 
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+The App idea is based on a personal experience with “Lemon Tour” which is a company providing renting bicycles service in Tunisia.
+We aimed to digitize the service and add some features as Google Map, Music playlist, etc..
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Contributors
+Eya Nani - [Github] (https://github.com/eya-98)
+Emna Bouaziz - [Github] (https://github.com/emnabz)
+Khalil Ben Yahyaten  - [Github] (https://github.com/khalilbenyahyaten)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
