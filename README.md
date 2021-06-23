@@ -6,7 +6,7 @@ A Rencting bicycles project
 Our mobile app aims at changing the means of mobility by offering bike rental services.
 
 ### Demo
-[![Watch the video](https://www.youtube.com/watch?v=1nTimm2LmnE)](https://youtu.be/T-D1KVIuvjA)
+[![Watch the video](https://www.youtube.com/watch?v=1nTimm2LmnE)](https://www.youtube.com/watch?v=1nTimm2LmnE)
 
 
 ## Contributors
