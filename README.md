@@ -6,8 +6,7 @@ A Rencting bicycles project
 Our mobile app aims at changing the means of mobility by offering bike rental services.
 
 ### Demo
-https://github.com/eya-98/application_flutter/issues/3#issue-928560239
-
+[![SC2 Video](doc/SC2_youtube.gif)](https://www.youtube.com/watch?v=1nTimm2LmnE)
 
 
 ## Contributors
