@@ -7,6 +7,7 @@ Our mobile app aims at changing the means of mobility by offering bike rental se
 
 ### Demo
 [![SC2 Video](doc/SC2_youtube.gif)](https://www.youtube.com/watch?v=1nTimm2LmnE)
+[![Watch the video](https://www.youtube.com/watch?v=1nTimm2LmnE)](https://youtu.be/T-D1KVIuvjA)
 
 
 ## Contributors
