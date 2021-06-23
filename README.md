@@ -1,6 +1,6 @@
 # bisklet
 
-A Rencting bicycles project 
+A Renting bicycles project 
 
 ## Introduction
 Our Mobile Application aims at changing the means of mobility by offering bike rental services.
