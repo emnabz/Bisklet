@@ -4,16 +4,13 @@ A Rencting bicycles project
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-The App idea is based on a personal experience with “Lemon Tour” which is a company providing renting bicycles service in Tunisia.
-We aimed to digitize the service and add some features as Google Map, Music playlist, etc..
 
 ## Contributors
-Eya Nani - [Github] (https://github.com/eya-98)
+Eya Nani - [Github] (https://github.com/eya-98) and [LinkedIn] (https://www.linkedin.com/in/eya-nani-534996154/)
 
-Emna Bouaziz - [Github] (https://github.com/emnabz)
+Emna Bouaziz - [Github] (https://github.com/emnabz) and [LinkedIn] (https://www.linkedin.com/in/emna-bouaziz-4634771b7/)
 
-Khalil Ben Yahyaten  - [Github] (https://github.com/khalilbenyahyaten)
+Khalil Ben Yahyaten  - [Github] (https://github.com/khalilbenyahyaten) and [LinkedIn] (https://www.linkedin.com/in/khalil-ben-yahyaten-579243155/)
+
 
 

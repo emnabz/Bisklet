@@ -20,6 +20,7 @@ class EditProfilePage extends StatefulWidget {
 
 class _EditProfilePageState extends State<EditProfilePage> {
   bool showPassword = true;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,7 +129,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   ),
                   
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      
+                    },
                     color: Colors.green,
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     elevation: 2,
@@ -139,12 +142,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       style: TextStyle(
                           fontSize: 14,
                           letterSpacing: 2.2,
-                          color: Colors.white),
+                          color: Colors.white ),
                     ),
                   )
                 ],
-              ),
-              
+              ),    
             ],
           ),
         ),

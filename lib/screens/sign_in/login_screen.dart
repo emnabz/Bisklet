@@ -51,8 +51,7 @@ class StartState extends State<LoginScreen> {
                         alignment: Alignment.bottomRight,
                         child: Text(
                           "Login",
-                          style: TextStyle(
-                            
+                          style: TextStyle(   
                               fontSize: 20,
                               color: Colors.white
                           ),
@@ -136,7 +135,6 @@ class StartState extends State<LoginScreen> {
              },
             ),
           ),
-
                 ),
                ),
             Container(
@@ -147,8 +145,7 @@ class StartState extends State<LoginScreen> {
                   Navigator.push(
                   context, 
                   MaterialPageRoute(builder: (context) => Forgot()));
-                },
-                      
+                },    
                 child: Text("Forget Password?"),
               ),
             ),

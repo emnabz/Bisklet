@@ -135,10 +135,12 @@ class _mainPageState extends State<mainPage> {
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
                 color: Colors.white
               ),
+              
             ),
           ),
-        ]
+        ],
       ),
     );
-  }
+
+    }
 }
